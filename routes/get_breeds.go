@@ -1,13 +1,20 @@
 package routes
 
 import (
-	"assignment/sharable"
-	"assignment/utils"
+	"dog_breeds_search/sharable"
+	"dog_breeds_search/utils"
 	"encoding/json"
 	"errors"
 	"net/http"
 )
 
+// GetBreeds @Summary Get all breeds
+// @Description Returns a list of all dog breeds.
+// @Tags breeds
+// @Produce json
+// @Success 200 {array} string "List of all dog breeds"
+// @Failure 500 {object} sharable.ErrorResponse "Internal server error"
+// @Router /getBreeds [get]
 func GetBreeds(mux *http.ServeMux) {
 	mux.HandleFunc("/getBreeds", func(w http.ResponseWriter, r *http.Request) {
 		if len(*sharable.Dogs) == 0 && len(*sharable.DogBreeds) == 0 {

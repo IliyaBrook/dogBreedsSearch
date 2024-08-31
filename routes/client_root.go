@@ -1,8 +1,8 @@
 package routes
 
 import (
-	pages "assignment/client/pages/home"
-	"assignment/utils"
+	pages "dog_breeds_search/client/pages/home"
+	"dog_breeds_search/utils"
 	"net/http"
 )
 
